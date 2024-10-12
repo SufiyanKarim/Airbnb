@@ -102,9 +102,9 @@ const Pages = () => {
     { img: rooms, title: "Rooms" },
     { img: cities, title: "Top Cities" },
     { img: amazingView, title: "Amazing Views" },
-    { img: OMG, title: "OMG!" },
+    { img: OMG, title: "OMG" },
     { img: surfing, title: "Surfing" },
-    { img: bedbreakfast, title: "Bed & Breakfasts" },
+    { img: bedbreakfast, title: "Bed Breakfasts" },
     { img: mansions, title: "Mansions" },
     { img: castles, title: "Castles" },
     { img: trending, title: "Trending" },
@@ -201,7 +201,7 @@ const Pages = () => {
           <div
             key={index}
             className="flex flex-col items-center justify-center flex-wrap cursor-pointer"
-            onClick={() => setDataFilter(page.title)}
+            onClick={() => setDataFilter(page.title.toLowerCase().trim().replace(/\s+/g, ''))}
           >
             <img
               src={page.img}

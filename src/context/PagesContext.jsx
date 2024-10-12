@@ -9,6 +9,8 @@ export const PagesProvider = ({ children }) => {
         icon1: {
           id: 1,
           title: "Join the Living Room Session with Doja Cat",
+          description:'Hosted by Doja Cat',
+          booking:'$77 per guest',
           images: [
             "/public/icons/icon1.jpeg",
             "/public/icons/icon2.webp",
@@ -19,7 +21,9 @@ export const PagesProvider = ({ children }) => {
         },
         icon2: {
           id: 2,
-          title: "Join the Living Room Session with Doja Cat",
+          title: "Stay in Prince’s Purple Rain house",
+          description:'Hosted by Wendy And Lisa',
+          booking:'Booking closed',
           images: [
             "/public/icons/icon6.webp",
             "/public/icons/icon7.webp",
@@ -30,7 +34,10 @@ export const PagesProvider = ({ children }) => {
         },
         icon3: {
           id: 3,
-          title: "Join the Living Room Session with Doja Cat",
+          title: "Playdate at Polly Pocket’s Compact",
+          description:'Hosted by Polly Pocket',
+          booking:'Booking Close',
+          
           images: [
             "/public/icons/icon11.webp",
             "/public/icons/icon12.webp",
@@ -41,7 +48,9 @@ export const PagesProvider = ({ children }) => {
         },
         icon4: {
           id: 4,
-          title: "Join the Living Room Session with Doja Cat",
+          title: "Sleepover at Polly Pocket’s Compact",
+          description:'Hosted by Polly Pocket',
+          booking:'Booking Close',
           images: [
             "/public/icons/icon16.webp",
             "/public/icons/icon17.webp",
@@ -52,7 +61,9 @@ export const PagesProvider = ({ children }) => {
         },
         icon5: {
           id: 5,
-          title: "Join the Living Room Session with Doja Cat",
+          title: "Go VIP with Kevin Hart",
+          description:'Hosted by Kevin Hart',
+          booking:'Booking Close',
           images: [
             "/public/icons/icon21.webp",
             "/public/icons/icon22.webp",
@@ -63,7 +74,9 @@ export const PagesProvider = ({ children }) => {
         },
         icon6: {
           id: 6,
-          title: "Join the Living Room Session with Doja Cat",
+          title: "Train at the X-Mansion",
+          description:'Hosted by X-Mansion',
+          booking:'Booking Close',
           images: [
             "/public/icons/icon26.webp",
             "/public/icons/icon27.webp",
@@ -141,7 +154,7 @@ export const PagesProvider = ({ children }) => {
           ],
         },
       },
-      "top Cities": {
+      topcities: {
         icon1: {
           id: 1,
           title: "Join the Living Room Session with Doja Cat",
@@ -209,7 +222,7 @@ export const PagesProvider = ({ children }) => {
           ],
         },
       },
-      "amazing Views": {
+      amazingviews: {
         icon1: {
           id: 1,
           title: "Join the Living Room Session with Doja Cat",
@@ -277,7 +290,7 @@ export const PagesProvider = ({ children }) => {
           ],
         },
       },
-      OMG: {
+      omg: {
         icon1: {
           id: 1,
           title: "Join the Living Room Session with Doja Cat",
@@ -413,7 +426,7 @@ export const PagesProvider = ({ children }) => {
           ],
         },
       },
-      bedbreakfast: {
+      bedbreakfasts: {
         icon1: {
           id: 1,
           title: "Join the Living Room Session with Doja Cat",
@@ -491,7 +504,6 @@ export const PagesProvider = ({ children }) => {
     setShowSocialForm(!showSocialForm);
   };
 
-  console.log(dataFilter)
 
   useEffect(() => {
     let newAllData;
@@ -504,7 +516,8 @@ export const PagesProvider = ({ children }) => {
     newData();
     const newFilteredArr = newAllData
       .map((item) => {
-        const value = item[dataFilter.toLowerCase().trim()]; // Access the property
+        const value = item[dataFilter.toLowerCase().trim().replace(/\s+/g, '')]; // Access the property
+        console.log(value)
         return value !== undefined ? value : null; // Return value or null if undefined
       })
       .filter((item) => item !== null); // Filter out null values
