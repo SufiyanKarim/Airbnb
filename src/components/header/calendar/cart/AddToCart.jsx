@@ -1,27 +1,6 @@
-import React, { useContext, useState } from "react";
-import { PagesContext } from "../../../../context/PagesContext";
+import React from "react";
 
 const AddToCart = () => {
-  const {  pets, setPets,
-    infants, setInfants,
-    childrens, setChildrens,
-    adults, setAdults, } = useContext(PagesContext)
-
-
-
-  // Handlers for increasing/decreasing guests
-  const increaseAdults = () => setAdults(adults + 1);
-  const decreaseAdults = () => adults > 0 && setAdults(adults - 1);
-
-  const increaseChildren = () => setChildrens(childrens + 1);
-  const decreaseChildren = () => childrens > 0 && setChildrens(childrens - 1);
-
-  const increaseInfants = () => setInfants(infants + 1);
-  const decreaseInfants = () => infants > 0 && setInfants(infants - 1);
-
-  const increasePets = () => setPets(pets + 1);
-  const decreasePets = () => pets > 0 && setPets(pets - 1);
-
   return (
     <div className="w-[30%] bg-white shadow-2xl absolute right-60 top-32 md:top-32 p-6 rounded-3xl">
       <div className="flex flex-col gap-5">
@@ -32,19 +11,9 @@ const AddToCart = () => {
             <p className="text-gray-500">Ages 13 or above</p>
           </div>
           <div className="flex justify-center items-center gap-4">
-            <button
-              className="bg-gray-200 py-2 px-4 rounded-full font-semibold text-xl border border-gray-300 hover:border-gray-400 cursor-pointer"
-              onClick={decreaseAdults}
-            >
-              -
-            </button>
-            <span className="font-semibold">{adults}</span>
-            <button
-              className="bg-gray-200 py-2 px-4 rounded-full font-semibold text-xl border border-gray-300 hover:border-gray-400 cursor-pointer"
-              onClick={increaseAdults}
-            >
-              +
-            </button>
+            <h1 className="bg-gray-200 py-2 px-4 rounded-full font-semibold text-xl border border-gray-300 hover:border-gray-400 cursor-pointer">-</h1>
+            <p className="font-semibold">0</p>
+            <p className="bg-gray-200 py-2 px-4 rounded-full font-semibold text-xl border border-gray-300 hover:border-gray-400 cursor-pointer">+</p>
           </div>
         </div>
         <hr />
