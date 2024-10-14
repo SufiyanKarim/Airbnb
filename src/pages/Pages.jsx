@@ -181,7 +181,7 @@ const Pages = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          //   dots: true,
+            // dots: true,
         },
       },
       {
@@ -195,7 +195,7 @@ const Pages = () => {
   };
 
   return (
-    <div className="relative px-8 py-5 ">
+    <div className="fixed top-[186px] left-0 right-0 bg-white  z-40 px-8 py-5 border-t-[1px] shadow-xl border-gray-300 ">
       <Slider {...settings}>
         {pagesDataName.map((page, index) => (
           <div

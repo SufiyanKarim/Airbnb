@@ -11,6 +11,8 @@ export const PagesProvider = ({ children }) => {
           title: "Join the Living Room Session with Doja Cat",
           description:'Hosted by Doja Cat',
           booking:'$77 per guest',
+          maxValue:'5',
+          currentLocation:'London, United Kingdom',
           images: [
             "/public/icons/icon1.jpeg",
             "/public/icons/icon2.webp",
@@ -24,6 +26,8 @@ export const PagesProvider = ({ children }) => {
           title: "Stay in Prince’s Purple Rain house",
           description:'Hosted by Wendy And Lisa',
           booking:'Booking closed',
+          maxValue:'7',
+          currentLocation:'London, United Kingdom',
           images: [
             "/public/icons/icon6.webp",
             "/public/icons/icon7.webp",
@@ -37,7 +41,8 @@ export const PagesProvider = ({ children }) => {
           title: "Playdate at Polly Pocket’s Compact",
           description:'Hosted by Polly Pocket',
           booking:'Booking Close',
-          
+          maxValue:'6',
+          currentLocation:'Islamabad, Pakistan',
           images: [
             "/public/icons/icon11.webp",
             "/public/icons/icon12.webp",
@@ -51,6 +56,8 @@ export const PagesProvider = ({ children }) => {
           title: "Sleepover at Polly Pocket’s Compact",
           description:'Hosted by Polly Pocket',
           booking:'Booking Close',
+          maxValue:'3',
+          currentlocation:'Islamabad, Pakistan',
           images: [
             "/public/icons/icon16.webp",
             "/public/icons/icon17.webp",
@@ -64,6 +71,8 @@ export const PagesProvider = ({ children }) => {
           title: "Go VIP with Kevin Hart",
           description:'Hosted by Kevin Hart',
           booking:'Booking Close',
+          maxValue:'3',
+          currentlocation:'Lahore, Pakistan',
           images: [
             "/public/icons/icon21.webp",
             "/public/icons/icon22.webp",
@@ -77,6 +86,8 @@ export const PagesProvider = ({ children }) => {
           title: "Train at the X-Mansion",
           description:'Hosted by X-Mansion',
           booking:'Booking Close',
+          maxValue:'7',
+          currentlocation:'Lahore, Pakistan',
           images: [
             "/public/icons/icon26.webp",
             "/public/icons/icon27.webp",
@@ -90,6 +101,7 @@ export const PagesProvider = ({ children }) => {
         icon1: {
           id: 1,
           title: "hello  Cat",
+          maxValue:'5',
           images: [
             "/public/icons/icon1.jpeg",
             "/public/icons/icon2.webp",
@@ -101,6 +113,7 @@ export const PagesProvider = ({ children }) => {
         icon2: {
           id: 2,
           title: "Join the Living Room Session with Doja Cat",
+          maxValue:'3',
           images: [
             "/public/icons/icon6.webp",
             "/public/icons/icon7.webp",
@@ -112,6 +125,7 @@ export const PagesProvider = ({ children }) => {
         icon3: {
           id: 3,
           title: "Join the Living Room Session with Doja Cat",
+          maxValue:'3',
           images: [
             "/public/icons/icon11.webp",
             "/public/icons/icon12.webp",
@@ -123,6 +137,7 @@ export const PagesProvider = ({ children }) => {
         icon4: {
           id: 4,
           title: "Join the Living Room Session with Doja Cat",
+          maxValue:'4',
           images: [
             "/public/icons/icon16.webp",
             "/public/icons/icon17.webp",
@@ -134,6 +149,7 @@ export const PagesProvider = ({ children }) => {
         icon5: {
           id: 5,
           title: "Join the Living Room Session with Doja Cat",
+          maxValue:'5',
           images: [
             "/public/icons/icon21.webp",
             "/public/icons/icon22.webp",
@@ -145,6 +161,7 @@ export const PagesProvider = ({ children }) => {
         icon6: {
           id: 6,
           title: "Join the Living Room Session with Doja Cat",
+          maxValue:'7',
           images: [
             "/public/icons/icon26.webp",
             "/public/icons/icon27.webp",
@@ -498,7 +515,14 @@ export const PagesProvider = ({ children }) => {
   ]);
   const [dataFilter, setDataFilter] = useState("icons");
   const [showSocialForm, setShowSocialForm] = useState(false);
-  const [filteredArr, setFilteredArr] = useState();
+  const [filteredArr, setFilteredArr] = useState([{}]);
+
+  const [adults, setAdults] = useState(0);
+  const [childrens, setChildrens] = useState(0);
+  const [infants, setInfants] = useState(0);
+  const [pets, setPets] = useState(0);
+  const [maxValues,setmaxValues] = useState();
+  const [currentLocations,setcurrentLocations] = useState([{}]);
 
   const handleShowSocialForm = () => {
     setShowSocialForm(!showSocialForm);
@@ -516,17 +540,45 @@ export const PagesProvider = ({ children }) => {
     newData();
     const newFilteredArr = newAllData
       .map((item) => {
-        const value = item[dataFilter.toLowerCase().trim().replace(/\s+/g, '')]; // Access the property
+        const value = item[dataFilter.toLowerCase().trim().replace(/\s+/g, '')]; 
         console.log(value)
-        return value !== undefined ? value : null; // Return value or null if undefined
+        return value !== undefined ? value : null; 
       })
-      .filter((item) => item !== null); // Filter out null values
-
-    // Set the filtered array in the state
+      .filter((item) => item !== null); 
     setFilteredArr(newFilteredArr);
   }, [dataFilter, pagesData]);
 
-// console.log(filteredArr)
+
+ 
+
+const handleCountGuests = ()=>{
+  const totalGuests = adults + childrens + infants + pets;
+
+  const data = filteredArr?.[0];
+  console.log(data)
+  const total = Object?.values(data);
+
+const maxGuests = total?.filter((item)=>item.maxValue ==totalGuests)
+ setmaxValues(maxGuests)
+}
+
+const cityNames = [{
+  Isb:'Islamabad, Pakistan',
+  lhr:'Lahore, Pakistan',
+}]
+
+
+const handleLocationChange = () => {
+  const keys = cityNames.map((item)=>Object.keys(item))
+  console.log(keys)
+  const data = filteredArr?.[0]
+  const total = Object?.values(data)
+  console.log(total)
+  const cityLocations = total?.filter((item)=>item.currentLocation == keys.find((item)=>item))
+  console.log("location", cityLocations)
+  setcurrentLocations(cityLocations)
+};
+
 
   return (
     <PagesContext.Provider
@@ -538,6 +590,15 @@ export const PagesProvider = ({ children }) => {
         dataFilter,
         setDataFilter,
         filteredArr,
+        pets, setPets,
+        infants, setInfants,
+        childrens, setChildrens,
+        adults, setAdults,
+        handleCountGuests,
+        maxValues,
+        cityNames,
+        currentLocations,
+        handleLocationChange,
       }}
     >
       {children}

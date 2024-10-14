@@ -10,7 +10,7 @@ import {
   Home,
 } from './index'
 import Pages from './pages/Pages';
-import Filter from './pages/Filter.jsx';
+
 
 
 const App = () => {
@@ -21,7 +21,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="pages/:id" element={<Pages />} /> 
-          <Route path="pages" element={<Filter />} /> 
+
            
         </Routes>
       </div>

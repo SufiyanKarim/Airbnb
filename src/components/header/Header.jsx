@@ -4,13 +4,14 @@ import { TfiWorld } from "react-icons/tfi";
 import { MdMenu } from "react-icons/md";
 import { FaCircleUser } from "react-icons/fa6";
 import HeaderMiddle from "./calendar/HeaderMiddle";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <>
-    <div className="flex justify-between items-center sticky top-0 z-50 bg-white  p-4   md:p-6">
+    <div className="flex justify-between items-center sticky top-0 z-50 bg-white p-4 md:p-6">
       {/* Logo and Brand */}
-      <div className="flex items-center w-[40%] sm:w-[25%] md:w-[15%]">
+      <Link to="/" className="flex items-center w-[40%] sm:w-[25%] md:w-[15%] z-50">
         <img
           src={logo}
           alt="Airbnb"
@@ -20,15 +21,15 @@ const Header = () => {
         <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#E1565C] border-b-4 border-[#E1565C] pb-1">
           Airbnb
         </h1>
-      </div>
+      </Link>
 
       {/* Center search area for larger devices */}
-      <div className="lg:block hidden absolute top-4 left-[50%] transform -translate-x-1/2 w-[90%] lg:w-[70%]">
+      <div className="lg:block hidden absolute top-4 left-[50%] transform -translate-x-1/2 w-[90%] lg:w-[100%] bg-white">
         <HeaderMiddle />
       </div>
 
       {/* Menu and Profile on the right */}
-      <div className="flex items-center w-[40%] sm:w-[30%] justify-end space-x-4">
+      <div className="flex items-center w-[40%] sm:w-[30%] justify-end space-x-4 z-50">
         <h1 className="hidden lg:block text-base font-semibold">
           Airbnb your home
         </h1>

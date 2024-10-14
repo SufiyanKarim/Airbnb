@@ -22,16 +22,17 @@ const HeaderMiddle = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 ">
       <SearchBar toggleCalendar={toggleCalendar} />
 
       {showCalendar && (
-      <div>
+      <div  className="bg-white shadow-2xl w-[55%] rounded-md absolute left-80 top-[170px]">
       <DateTabs />
         <Calendar
           currentMonth={currentMonth}
           onNextMonth={handleNextMonth}
           onPrevMonth={handlePrevMonth}
+         
         />
       </div>
       )}

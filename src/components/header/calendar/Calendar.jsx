@@ -87,7 +87,7 @@ const Calendar = ({ currentMonth, onNextMonth, onPrevMonth }) => {
   };
 
   return (
-    <div className="p-4 bg-white rounded-lg shadow">
+    <div className="p-4  w-[100%] rounded-lg shadow-2xl">
       {renderHeader()}
       {renderDays()}
       {renderCells()}
