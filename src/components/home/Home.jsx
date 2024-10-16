@@ -4,6 +4,7 @@ import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 import { MdSaveAlt } from "react-icons/md";
 import { PagesContext } from "../../context/PagesContext";
 import SocialCard from "../../pages/SocialCard";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const { handleShowSocialForm, showSocialForm, filteredArr, maxValues, currentLocations,
@@ -51,7 +52,7 @@ const Home = () => {
                 key={id}
                 className="bg-white shadow-lg rounded-lg overflow-hidden relative h-[400px] w-[300px]"
               >
-                <div className="relative h-full">
+                <Link to={`/individual/${id}`} className="relative h-full">
                   {/* Previous button */}
                   <button
                     className="absolute left-2 top-1/3 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 p-2 rounded-full text-gray-700 z-10"
@@ -89,7 +90,7 @@ const Home = () => {
                   >
                     <MdSaveAlt size={20} className="transform rotate-270" />
                   </button>
-                </div>
+                </Link>
               </div>
             );
           })
@@ -101,7 +102,7 @@ const Home = () => {
                 key={id}
                 className="bg-white shadow-lg rounded-lg overflow-hidden relative h-[400px] w-[300px]"
               >
-                <div className="relative h-full">
+                <Link to={`/individual/${id}`} className="relative h-full">
                   {/* Previous button */}
                   <button
                     className="absolute left-2 top-1/3 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 p-2 rounded-full text-gray-700 z-10"
@@ -139,7 +140,7 @@ const Home = () => {
                   >
                     <MdSaveAlt size={20} className="transform rotate-270" />
                   </button>
-                </div>
+                </Link>
               </div>
             )
           })
@@ -151,7 +152,7 @@ const Home = () => {
               key={id}
               className="bg-white shadow-lg rounded-lg overflow-hidden relative h-[400px] w-[300px]"
             >
-              <div className="relative h-full">
+              <Link to={`/individual/${id}`} className="relative h-full">
                 {/* Previous button */}
                 <button
                   className="absolute left-2 top-1/3 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 p-2 rounded-full text-gray-700 z-10"
@@ -189,7 +190,7 @@ const Home = () => {
                 >
                   <MdSaveAlt size={20} className="transform rotate-270" />
                 </button>
-              </div>
+              </Link>
             </div>
           );
         })}
