@@ -9,12 +9,11 @@ import {
   Footer,
   Home,
 } from './index'
-import Pages from './pages/Pages';
-<<<<<<< HEAD
+// import Pages from './pages/Pages';
+import Pages from './pages/Pages.jsx'
+import IndividualPage from './pages/IndividualPage.jsx';
 
-=======
-// import Filter from './pages/Filter.jsx';
->>>>>>> 984bf501537266e25ebe63dc141987b9d9cb3afc
+
 
 
 const App = () => {
@@ -25,11 +24,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="pages/:id" element={<Pages />} /> 
-<<<<<<< HEAD
-
-=======
-          {/* <Route path="pages" element={<Filter />} />  */}
->>>>>>> 984bf501537266e25ebe63dc141987b9d9cb3afc
+          <Route path="individual" element={<IndividualPage />} /> 
            
         </Routes>
       </div>

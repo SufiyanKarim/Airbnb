@@ -95,7 +95,7 @@ const CustomNextArrow = ({ onClick, isVisible }) =>
 
 const Pages = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const {setDataFilter} = useContext(PagesContext)
+  const {setDataFilter,filteredArr} = useContext(PagesContext)
 
   const pagesDataName = [
     { img: icons, title: "Icons" },
@@ -168,7 +168,7 @@ const Pages = () => {
   const settings = {
     infinite: false,
     speed: 500,
-    slidesToShow: 10,
+    slidesToShow: 10, // Default for extra-large screens
     slidesToScroll: 3,
     beforeChange: (current, next) => setCurrentSlide(next),
     prevArrow: <CustomPrevArrow isVisible={currentSlide > 0} />,
@@ -177,31 +177,53 @@ const Pages = () => {
     ),
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1536, // Extra-large screens (xl)
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-            // dots: true,
+          slidesToShow: 10,
+          slidesToScroll: 3,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 1280, // Large screens (lg)
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 9,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 1024, // Medium screens (md)
+        settings: {
+          slidesToShow: 7,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 768, // Small screens (sm)
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480, // Extra small screens
+        settings: {
+          slidesToShow: 4,
           slidesToScroll: 1,
         },
       },
     ],
   };
-
+  
   return (
-    <div className="fixed top-[186px] left-0 right-0 bg-white  z-40 px-8 py-5 border-t-[1px] shadow-xl border-gray-300 ">
+    <div className="fixed top-[186px] left-0 right-0 bg-white z-40 px-8 py-5 border-t-[1px] shadow-xl border-gray-300  ">
       <Slider {...settings}>
         {pagesDataName.map((page, index) => (
           <div
             key={index}
             className="flex flex-col items-center justify-center flex-wrap cursor-pointer"
-            onClick={() => setDataFilter(page.title.toLowerCase().trim().replace(/\s+/g, ''))}
+            onClick={() =>
+              setDataFilter(page.title.toLowerCase().trim().replace(/\s+/g, ""))
+            }
           >
             <img
               src={page.img}
@@ -213,6 +235,8 @@ const Pages = () => {
         ))}
       </Slider>
     </div>
+  
+  
   );
 };
 

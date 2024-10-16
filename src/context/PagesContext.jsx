@@ -57,7 +57,7 @@ export const PagesProvider = ({ children }) => {
           description:'Hosted by Polly Pocket',
           booking:'Booking Close',
           maxValue:'3',
-          currentlocation:'Islamabad, Pakistan',
+          currentLocation:'Islamabad, Pakistan',
           images: [
             "/public/icons/icon16.webp",
             "/public/icons/icon17.webp",
@@ -72,7 +72,7 @@ export const PagesProvider = ({ children }) => {
           description:'Hosted by Kevin Hart',
           booking:'Booking Close',
           maxValue:'3',
-          currentlocation:'Lahore, Pakistan',
+          currentLocation:'Lahore, Pakistan',
           images: [
             "/public/icons/icon21.webp",
             "/public/icons/icon22.webp",
@@ -87,7 +87,7 @@ export const PagesProvider = ({ children }) => {
           description:'Hosted by X-Mansion',
           booking:'Booking Close',
           maxValue:'7',
-          currentlocation:'Lahore, Pakistan',
+          currentLocation:'Lahore, Pakistan',
           images: [
             "/public/icons/icon26.webp",
             "/public/icons/icon27.webp",
@@ -522,11 +522,16 @@ export const PagesProvider = ({ children }) => {
   const [infants, setInfants] = useState(0);
   const [pets, setPets] = useState(0);
   const [maxValues,setmaxValues] = useState();
-  const [currentLocations,setcurrentLocations] = useState([{}]);
+  const [currentLocations,setcurrentLocations] = useState();
+  const [socialTitle, setSocialTitle] = useState('');
+  const [socialImage,setSocialImage] = useState('')
 
-  const handleShowSocialForm = () => {
+  const handleShowSocialForm = (title,images) => {
     setShowSocialForm(!showSocialForm);
+    setSocialTitle(title); 
+    setSocialImage(images)
   };
+
 
 
   useEffect(() => {
@@ -549,8 +554,6 @@ export const PagesProvider = ({ children }) => {
   }, [dataFilter, pagesData]);
 
 
- 
-
 const handleCountGuests = ()=>{
   const totalGuests = adults + childrens + infants + pets;
 
@@ -565,19 +568,41 @@ const maxGuests = total?.filter((item)=>item.maxValue ==totalGuests)
 const cityNames = [{
   Isb:'Islamabad, Pakistan',
   lhr:'Lahore, Pakistan',
+  Istanbul:'Istanbul, Turkiye',
+  karachi:'Karachi, Pakistan',
+  paris:'Paris, France',
+  murree:'Murree, Pakistan',
+  london:'London, United Kingdom',
+  toronto:'Toronto, Canada',
+  bangkok:'Bangkok, Thailand',
+  sudia:'Saudia Arabia',
+  rawalpindi:'Rawalpindi, Pakistan',
+  rome:'Rome, Italy',
+  jeddah:'Jeddah, Saudi Arabia',
+  newYork:'New York, United States',
+  athens:'Athens, Greece',
+  tbilisi:'Tbilisi, Georgia',
+  abuDhabi:'Abu Dhabi, United Arab Emirates',
+  riyadh:'Riydha Saudi Arabia',
+  vienna:'Vienna, Austria',
 }]
 
 
-const handleLocationChange = () => {
-  const keys = cityNames.map((item)=>Object.keys(item))
-  console.log(keys)
-  const data = filteredArr?.[0]
-  const total = Object?.values(data)
-  console.log(total)
-  const cityLocations = total?.filter((item)=>item.currentLocation == keys.find((item)=>item))
-  console.log("location", cityLocations)
-  setcurrentLocations(cityLocations)
+const handleLocationChange = (selectedCity) => {
+  
+  const cities = cityNames[0]; 
+  const cityValues = Object.values(cities); 
+  const data = filteredArr?.[0]; 
+  const totalLocations = Object.values(data);
+  const cityLocations = totalLocations?.filter(item => {
+    const match = item.currentLocation === selectedCity; 
+    console.log('Matching city:', match ? selectedCity : 'No match'); 
+    return match; 
+  });
+  setcurrentLocations(cityLocations); 
 };
+
+
 
 
   return (
@@ -590,15 +615,21 @@ const handleLocationChange = () => {
         dataFilter,
         setDataFilter,
         filteredArr,
-        pets, setPets,
-        infants, setInfants,
-        childrens, setChildrens,
-        adults, setAdults,
+        pets, 
+        setPets,
+        infants, 
+        setInfants,
+        childrens, 
+        setChildrens,
+        adults, 
+        setAdults,
         handleCountGuests,
         maxValues,
         cityNames,
         currentLocations,
         handleLocationChange,
+        socialTitle,
+        socialImage,
       }}
     >
       {children}
