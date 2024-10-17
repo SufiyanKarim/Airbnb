@@ -11,7 +11,7 @@ import {
 } from './index'
 // import Pages from './pages/Pages';
 import Pages from './pages/Pages.jsx'
-import IndividualPage from './pages/IndividualPage.jsx';
+import IndividualPage from './pages/IndividualPage/IndividualPage.jsx';
 
 
 

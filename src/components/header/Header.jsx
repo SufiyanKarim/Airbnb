@@ -4,9 +4,16 @@ import { TfiWorld } from "react-icons/tfi";
 import { MdMenu } from "react-icons/md";
 import { FaCircleUser } from "react-icons/fa6";
 import HeaderMiddle from "./calendar/HeaderMiddle";
-import { Link } from "react-router-dom";
+import { Link, useLocation, matchPath } from "react-router-dom";
 
 const Header = () => {
+
+  const location = useLocation().pathname;
+  const isIndividual = matchPath("/individual/:id", location);
+  if (isIndividual) {
+    return null;
+  }
+  
   return (
     <>
     <div className="flex justify-between items-center sticky top-0 z-50 bg-white p-4 md:p-6">
