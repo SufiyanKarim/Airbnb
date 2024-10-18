@@ -13,6 +13,7 @@ import { LuLampDesk } from "react-icons/lu";
 import { PiCityLight } from "react-icons/pi";
 import { CiHeart } from "react-icons/ci";
 import CommentSection from './CommentSection';
+import HostDetail from './HostDetail';
 
 const IndividualPage = () => {
   const { id } = useParams();
@@ -208,6 +209,9 @@ const IndividualPage = () => {
 
         <div>
           <CommentSection />
+        </div>
+        <div>
+          <HostDetail />
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@ import icon1 from '../../assets/individualPageImages/icons/icon1.jpeg'
 const CommentSection = () => {
     return (
         <div className='w-full'>
-            <div className='w-[90%] m-auto'>
+            <div className='w-[90%] m-auto '>
                 <div className='flex justify-center items-center flex-col gap-4'>
                     <div className='flex justify-center items-start gap-4'>
                         <img src={leftImage} alt="" className='w-28' />
@@ -78,61 +78,181 @@ const CommentSection = () => {
             </div>
             <hr className='my-6' />
 
-            <div className="w-[90%] m-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Card 1 */}
-                <div className="p-4 bg-white border border-gray-300 rounded-lg">
-                    <div className="flex items-center gap-3 mb-3">
-                        <img src={icon1} className="rounded-full w-10 h-10" alt="User" />
-                        <div className="flex flex-col">
-                            <h1 className="text-lg font-semibold">Yasmine</h1>
-                            <span className="text-sm text-gray-500">8 years on Airbnb</span>
+            <div className='w-full pb-8'>
+                <div className="w-[100%] m-auto grid grid-cols-1 md:grid-cols-2 gap-6 pb-4">
+                    {/* Card 1 */}
+                    <div className="p-4 bg-white border border-gray-300 rounded-lg">
+                        <div className="flex items-center gap-3 mb-3">
+                            <img src={icon1} className="rounded-full w-10 h-10" alt="User" />
+                            <div className="flex flex-col">
+                                <h1 className="text-lg font-semibold">Yasmine</h1>
+                                <span className="text-sm text-gray-500">8 years on Airbnb</span>
+                            </div>
                         </div>
-                    </div>
-                    <div className="flex items-center gap-3 mb-2">
-                        <div className="flex items-center gap-1 text-gray-800">
-                            <FaStar />
-                            <FaStar />
-                            <FaStar />
-                            <FaStar />
-                            <FaStar />
+                        <div className="flex items-center gap-3 mb-2">
+                            <div className="flex items-center gap-1 text-gray-800">
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                            </div>
+                            <span className="text-sm text-gray-500">. 1 week ago</span>
+                            <span className="text-sm text-gray-500">· Stayed a few nights</span>
                         </div>
-                        <span className="text-sm text-gray-500">. 1 week ago</span>
-                        <span className="text-sm text-gray-500">· Stayed a few nights</span>
+                        <p className="text-gray-700">
+                            We had a great time at this Airbnb in Copenhagen! The apartment was spotless. The hosts were welcoming and friendly. The location was perfect, with plenty of landmarks.
+                        </p>
                     </div>
-                    <p className="text-gray-700">
-                        We had a great time at this Airbnb in Copenhagen! The apartment was spotless. The hosts were welcoming and friendly. The location was perfect, with plenty of landmarks.
-                    </p>
-                </div>
 
-                {/* Card 2 */}
-                <div className="p-4 bg-white border border-gray-300 rounded-lg ">
-                    <div className="flex items-center gap-3 mb-3">
-                        <img src={icon1} className="rounded-full w-10 h-10" alt="User" />
-                        <div className="flex flex-col">
-                            <h1 className="text-lg font-semibold">Yasmine</h1>
-                            <span className="text-sm text-gray-500">8 years on Airbnb</span>
+                    {/* Card 2 */}
+                    <div className="p-4 bg-white border border-gray-300 rounded-lg ">
+                        <div className="flex items-center gap-3 mb-3">
+                            <img src={icon1} className="rounded-full w-10 h-10" alt="User" />
+                            <div className="flex flex-col">
+                                <h1 className="text-lg font-semibold">Yasmine</h1>
+                                <span className="text-sm text-gray-500">8 years on Airbnb</span>
+                            </div>
                         </div>
-                    </div>
-                    <div className="flex items-center gap-3 mb-2">
-                        <div className="flex items-center gap-1 text-gray-800">
-                            <FaStar />
-                            <FaStar />
-                            <FaStar />
-                            <FaStar />
-                            <FaStar />
+                        <div className="flex items-center gap-3 mb-2">
+                            <div className="flex items-center gap-1 text-gray-800">
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                            </div>
+                            <span className="text-sm text-gray-500">. 1 week ago</span>
+                            <span className="text-sm text-gray-500">· Stayed a few nights</span>
                         </div>
-                        <span className="text-sm text-gray-500">. 1 week ago</span>
-                        <span className="text-sm text-gray-500">· Stayed a few nights</span>
+                        <p className="text-gray-700">
+                            We had a great time at this Airbnb in Copenhagen! The apartment was spotless. The hosts were welcoming and friendly. The location was perfect, with plenty of landmarks.
+                        </p>
                     </div>
-                    <p className="text-gray-700">
-                        We had a great time at this Airbnb in Copenhagen! The apartment was spotless. The hosts were welcoming and friendly. The location was perfect, with plenty of landmarks.
-                    </p>
-                </div>
 
-                {/* Additional cards can be added similarly */}
+                    {/* Card 3 */}
+                    <div className="p-4 bg-white border border-gray-300 rounded-lg ">
+                        <div className="flex items-center gap-3 mb-3">
+                            <img src={icon1} className="rounded-full w-10 h-10" alt="User" />
+                            <div className="flex flex-col">
+                                <h1 className="text-lg font-semibold">Yasmine</h1>
+                                <span className="text-sm text-gray-500">8 years on Airbnb</span>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-3 mb-2">
+                            <div className="flex items-center gap-1 text-gray-800">
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                            </div>
+                            <span className="text-sm text-gray-500">. 1 week ago</span>
+                            <span className="text-sm text-gray-500">· Stayed a few nights</span>
+                        </div>
+                        <p className="text-gray-700">
+                            We had a great time at this Airbnb in Copenhagen! The apartment was spotless. The hosts were welcoming and friendly. The location was perfect, with plenty of landmarks.
+                        </p>
+                    </div>
+
+                    {/* Card 4 */}
+                    <div className="p-4 bg-white border border-gray-300 rounded-lg ">
+                        <div className="flex items-center gap-3 mb-3">
+                            <img src={icon1} className="rounded-full w-10 h-10" alt="User" />
+                            <div className="flex flex-col">
+                                <h1 className="text-lg font-semibold">Yasmine</h1>
+                                <span className="text-sm text-gray-500">8 years on Airbnb</span>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-3 mb-2">
+                            <div className="flex items-center gap-1 text-gray-800">
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                            </div>
+                            <span className="text-sm text-gray-500">. 1 week ago</span>
+                            <span className="text-sm text-gray-500">· Stayed a few nights</span>
+                        </div>
+                        <p className="text-gray-700">
+                            We had a great time at this Airbnb in Copenhagen! The apartment was spotless. The hosts were welcoming and friendly. The location was perfect, with plenty of landmarks.
+                        </p>
+                    </div>
+
+                    {/* Card 5 */}
+                    <div className="p-4 bg-white border border-gray-300 rounded-lg ">
+                        <div className="flex items-center gap-3 mb-3">
+                            <img src={icon1} className="rounded-full w-10 h-10" alt="User" />
+                            <div className="flex flex-col">
+                                <h1 className="text-lg font-semibold">Yasmine</h1>
+                                <span className="text-sm text-gray-500">8 years on Airbnb</span>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-3 mb-2">
+                            <div className="flex items-center gap-1 text-gray-800">
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                            </div>
+                            <span className="text-sm text-gray-500">. 1 week ago</span>
+                            <span className="text-sm text-gray-500">· Stayed a few nights</span>
+                        </div>
+                        <p className="text-gray-700">
+                            We had a great time at this Airbnb in Copenhagen! The apartment was spotless. The hosts were welcoming and friendly. The location was perfect, with plenty of landmarks.
+                        </p>
+                    </div>
+
+                    {/* Card 6 */}
+                    <div className="p-4 bg-white border border-gray-300 rounded-lg ">
+                        <div className="flex items-center gap-3 mb-3">
+                            <img src={icon1} className="rounded-full w-10 h-10" alt="User" />
+                            <div className="flex flex-col">
+                                <h1 className="text-lg font-semibold">Yasmine</h1>
+                                <span className="text-sm text-gray-500">8 years on Airbnb</span>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-3 mb-2">
+                            <div className="flex items-center gap-1 text-gray-800">
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                            </div>
+                            <span className="text-sm text-gray-500">. 1 week ago</span>
+                            <span className="text-sm text-gray-500">· Stayed a few nights</span>
+                        </div>
+                        <p className="text-gray-700">
+                            We had a great time at this Airbnb in Copenhagen! The apartment was spotless. The hosts were welcoming and friendly. The location was perfect, with plenty of landmarks.
+                        </p>
+                    </div>
+                </div>
+                <button className='bg-gray-200 py-2 px-4 rounded-md font-semibold ml-[65px] '>Show All reviews</button>
+                <hr className='mt-8' />
             </div>
 
-
+            <div className='w-full m-auto pb-10'>
+                <h1 className='text-3xl font-semibold'>Where you’ll be</h1>
+                <div className="mapswrapper" style={{ position: 'relative', backgroundColor: '#fff' }}>
+                    <iframe
+                        width="100%"
+                        height="500"
+                        loading="lazy"
+                        allowFullScreen
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Islamabad&zoom=10&maptype=roadmap"
+                        style={{ border: 0, position: 'relative', zIndex: 2 }}
+                    />
+                    <div className='flex flex-col gap-3 flex-wrap items-start'>
+                        <h1 className='text-xl font-semibold text-gray-700'>Copenhagen, Denmark</h1>
+                        <p className='text-gray-700 text-base'>very good neighborhood with lots of nice restaurants/bars and tourist attractions just 2mins away.</p>
+                        <button className='bg-gray-200 py-2 px-4 rounded-md font-semibold underline'>Show More...</button>
+                    </div>
+                </div>
+            </div>
+            <hr className='mb-7' />
         </div>
     )
 }

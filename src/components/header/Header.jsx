@@ -13,10 +13,10 @@ const Header = () => {
   if (isIndividual) {
     return null;
   }
-  
+
   return (
     <>
-    <div className="flex justify-between items-center sticky top-0 z-50 bg-white p-4 md:p-6">
+    <div className="flex justify-between items-center flex-wrap sticky top-0 z-50 bg-white p-4 md:p-6">
       {/* Logo and Brand */}
       <Link to="/" className="flex items-center w-[40%] sm:w-[25%] md:w-[15%] z-50">
         <img
@@ -48,7 +48,7 @@ const Header = () => {
       </div>
       
     </div>
-    <hr className="mt-24" />
+    <hr className="mt-24 hidden sm:hidden lg:block md:block" />
     </>
   );
 };

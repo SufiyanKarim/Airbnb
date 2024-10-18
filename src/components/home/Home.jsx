@@ -43,7 +43,7 @@ const Home = () => {
     <div>
       <Pages />
       {/* Slider for each page */}
-      <div className="flex justify-start items-center gap-6 flex-wrap px-10 py-14 mt-[75px]">
+      <div className="flex gap-6 justify-center flex-wrap px-10 py-14 mt-[75px] sm:mt-16 md:mt-0 lg:mt-[75px]">
         {maxValues?.length > 0 ? (
           maxValues.map((item) => {
             const { id, title, images, description, booking } = item;
@@ -88,7 +88,7 @@ const Home = () => {
                     className="absolute top-2 right-2 bg-white bg-opacity-70 hover:bg-opacity-90 p-2 rounded-full text-gray-700 z-10"
                     onClick={() => handleShowSocialForm(title,images[0])}
                   >
-                    <MdSaveAlt size={20} className="transform rotate-270" />
+                    <MdSaveAlt size={20} className="transform rotate-270 z-50 hover:shadow-2xl" />
                   </button>
                 </Link>
               </div>
@@ -138,7 +138,7 @@ const Home = () => {
                     className="absolute top-2 right-2 bg-white bg-opacity-70 hover:bg-opacity-90 p-2 rounded-full text-gray-700 z-10"
                     onClick={() => handleShowSocialForm(title,images[0])}
                   >
-                    <MdSaveAlt size={20} className="transform rotate-270" />
+                    <MdSaveAlt size={20} className="transform rotate-270 z-50 hover:shadow-2xl" />
                   </button>
                 </Link>
               </div>
@@ -188,7 +188,7 @@ const Home = () => {
                   className="absolute top-2 right-2 bg-white bg-opacity-70 hover:bg-opacity-90 p-2 rounded-full text-gray-700 z-10"
                   onClick={() => handleShowSocialForm(title,images[0])}
                 >
-                  <MdSaveAlt size={20} className="transform rotate-270" />
+                  <MdSaveAlt size={20} className="transform rotate-270 z-50 hover:shadow-2xl" />
                 </button>
               </Link>
             </div>

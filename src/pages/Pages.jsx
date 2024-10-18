@@ -215,7 +215,7 @@ const Pages = () => {
   };
   
   return (
-    <div className="fixed top-[186px] left-0 right-0 bg-white z-40 px-8 py-5 border-t-[1px] shadow-xl border-gray-300  ">
+    <div className="fixed top-[74px] sm:top-[88px] md:top-[104px] lg:top-[210px] xl:top-[186px] left-0 right-0 bg-white z-40 px-8 py-5 border-t-[1px] shadow-xl border-gray-300 ">
       <Slider {...settings}>
         {pagesDataName.map((page, index) => (
           <div
