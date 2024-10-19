@@ -11,7 +11,7 @@ import { TiGlobeOutline } from 'react-icons/ti';
 
 const HostDetail = () => {
     return (
-        <div className='w-full pb-8'>
+        <div className='w-full '>
             <div className='flex justify-between  gap-4'>
                 <div className='w-[35%]'>
                     <h1 className='text-2xl text-gray-900 font-semibold mb-6'>Meet your Host</h1>
@@ -108,6 +108,35 @@ const HostDetail = () => {
                             </span>
                         </div>
 
+                    </div>
+                </div>
+            </div>
+            <hr className='mt-4' />
+            <div className='py-4'>
+                <h1 className='text-2xl text-gray-900 font-semibold'>Things to know</h1>
+                <div className='flex justify-between items-center flex-wrap py-3 w-[100%]'>
+                    <div className='flex flex-col gap-2'>
+                        <h1 className='text-xl text-gray-900 font-semibold'>House rules</h1>
+                        <span className='text-gray-800 text-base'>Flexible check-in</span>
+                        <span className='text-gray-800 text-base'>Checkout before 11:00 AM</span>
+                        <span className='text-gray-800 text-base'>1 guest maximum</span>
+                        <button className='  text-start font-semibold underline'>Show more...</button>
+                    </div>
+
+                    <div className='flex flex-col gap-2'>
+                        <h1 className='text-xl text-gray-900 font-semibold'>Safety & property</h1>
+                        <span className='text-gray-800 text-base'>Carbon monoxide detector not required</span>
+                        <span className='text-gray-800 text-base'>Smoke alarm</span>
+                        <span className='text-gray-800 text-base'>Not suitable for children and infants</span>
+                        <button className=' text-start font-semibold underline'>Show more...</button>
+                    </div>
+
+                    <div className='flex flex-col gap-2 flex-wrap w-[30%]'>
+                        <h1 className='text-xl text-gray-900 font-semibold'>Cancellation policy</h1>
+                        <span className='text-gray-800 text-base'>Free cancellation for 48 hours. <br />Cancel before Dec 2 for a partial refund.</span>
+                        {/* <span className='text-gray-800 text-base'>Checkout before 11:00 AM</span> */}
+                        <span className='text-gray-800 text-base'>Review this Host's full policy for details.</span>
+                        <button className=' text-start font-semibold underline'>Show more...</button>
                     </div>
                 </div>
             </div>
