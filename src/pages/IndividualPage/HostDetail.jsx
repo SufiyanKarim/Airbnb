@@ -36,7 +36,7 @@ const HostDetail = () => {
                             </div>
 
                             {/* Rating */}
-                            <div className="mb-4 flex  flex-col gap-2  border-b-[1px] border-gray-300">
+                            <div className="mb-4 flex  flex-col gap-2 border-b-[1px] border-gray-300">
                                 <div className='flex items-center gap-1'>
                                     <span className='font-bold text-2xl text-gray-900'>4.96</span>
                                     <FaStar className='text-gray-800 text-sm' />
@@ -134,7 +134,6 @@ const HostDetail = () => {
                     <div className='flex flex-col gap-2 flex-wrap w-[30%]'>
                         <h1 className='text-xl text-gray-900 font-semibold'>Cancellation policy</h1>
                         <span className='text-gray-800 text-base'>Free cancellation for 48 hours. <br />Cancel before Dec 2 for a partial refund.</span>
-                        {/* <span className='text-gray-800 text-base'>Checkout before 11:00 AM</span> */}
                         <span className='text-gray-800 text-base'>Review this Host's full policy for details.</span>
                         <button className=' text-start font-semibold underline'>Show more...</button>
                     </div>
