@@ -174,7 +174,7 @@ export const PagesProvider = ({ children }) => {
       topcities: {
         icon1: {
           id: 1,
-          title: "Join the Living Room Session with Doja Cat",
+          title: "Top Cities",
           images: [
             "/public/icons/icon1.jpeg",
             "/public/icons/icon2.webp",
